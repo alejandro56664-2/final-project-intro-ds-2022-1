@@ -17,5 +17,5 @@ TODO
 
 ## Deliverables
 
-1. [Proposal](./proposal/README.md)
-2. [Exercise – Database Design/Implementation](./database_design_impl/README.md)
+1. [Proposal](./1_proposal/README.md)
+2. [Exercise – Database Design/Implementation](./2_database_design_impl/README.md)
