@@ -1,0 +1,35 @@
+# Use sqldb: postgres/20221, nosql: root/20221 credentials
+version: '3.1'
+
+services:
+  sqldb:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: 20221
+
+  nosqldb:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: 20221
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: 20221
+      ME_CONFIG_MONGODB_URL: mongodb://root:20221@mongo:27017/
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+  tltask:
+    image: tltask

@@ -29,7 +29,9 @@ TODO
 
 ## 3. Data description
 
-TODO
+
+
+For this PoC  (Proof of Concept) only a small portion of the data (~10 samples) will be used to perform the Transform and Load tests on the data from the original file structure and formats. This data can be found in ```./data/```
 
 ## 4. First Approach: Relational Database Model
 
@@ -100,19 +102,31 @@ Clone the repository:
 git clone git@github.com:alejandro56664-2/final-project-intro-ds-2022-1.git
 ```
 Move to the folder:
+
 ```sh
 cd final-project-intro-ds-2022-1/2_database_design_impl
 ```
-Start the container using docker
+Create the Transform & Load Container:
+
 ```sh
-docker compose up
+cd src
+docker build -t tltask .
 ```
 
-TODO 
- how to run queries
- docker compose yml
- scripts
+Start the containers using docker compose:
+```sh
+cd ..
+docker compose up
+```
+Wait until de docker compose pull the images and load the containers.
+
  
 ## 7. Conclusions
 
 TODO
+
+## 8. References
+
+- https://docs.docker.com/compose/
+- https://hub.docker.com/_/postgres
+- https://wiki.postgresql.org/wiki/Psycopg
