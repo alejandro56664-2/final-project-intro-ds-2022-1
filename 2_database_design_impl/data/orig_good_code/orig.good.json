@@ -1,0 +1,95 @@
+{
+    "daf81b989f81c7a0dd654d4b0bea5f08": {
+      "code_string": "def get_UB(config):\n    sample, geometry, detector, engines = new_hkl_diffractometer(config)\n    return hkl_matrix_to_numpy(sample.UB_get())\n",
+      "code_toks_joined": "def get_UB ( config ) : <NEWLINE> <INDENT> sample , geometry , detector , engines = new_hkl_diffractometer ( config ) <NEWLINE> return hkl_matrix_to_numpy ( sample . UB_get ( ) ) <NEWLINE> <DEDENT>",
+      "anonymize_dict": {}
+    },
+    "1bdd18d071e2bd423a7f43edaf2bede6": {
+      "code_string": "\"\"\"Helper functions\"\"\"\nimport datetime\nimport math\nimport pytz\nimport random\nimport re\n",
+      "code_toks_joined": "<STRING> <NEWLINE> import datetime <NEWLINE> import math <NEWLINE> import pytz <NEWLINE> import random <NEWLINE> import re <NEWLINE>",
+      "anonymize_dict": {
+        "<STRING>": [
+          "\"\"\"Helper functions\"\"\""
+        ]
+      }
+    },
+    "19a7ddc668b47aa6e8920230c4449c3d": {
+      "code_string": "class IWikiPageManipulator(Interface):\n    \"\"\"Components that need to do specific pre- and post- processing of\"\"\"\n    def prepare_wiki_page(req, page, fields):\n        \"\"\"Validate a wiki page before rendering it.\"\"\"\n    def validate_wiki_page(req, page):\n        \"\"\"Validate a wiki page after it's been populated from user input.\"\"\"\n",
+      "code_toks_joined": "class IWikiPageManipulator ( Interface ) : <NEWLINE> <INDENT> <STRING> <NEWLINE> def prepare_wiki_page ( req , page , fields ) : <NEWLINE> <INDENT> <STRING> <NEWLINE> <DEDENT> def validate_wiki_page ( req , page ) : <NEWLINE> <INDENT> <STRING> <NEWLINE> <DEDENT> <DEDENT>",
+      "anonymize_dict": {
+        "<STRING>": [
+          "\"\"\"Components that need to do specific pre- and post- processing of\"\"\"",
+          "\"\"\"Validate a wiki page before rendering it.\"\"\"",
+          "\"\"\"Validate a wiki page after it's been populated from user input.\"\"\""
+        ]
+      }
+    },
+    "cf05ae72a078a5f69f8d9b2042d30eb7": {
+      "code_string": "def test_local():\n    src = urllib.urlopen(url)\n    with open(local, 'w') as f:\n        f.write(src.read())\n    with open(local, 'r') as source:\n        forum_topics(source)\n",
+      "code_toks_joined": "def test_local ( ) : <NEWLINE> <INDENT> src = urllib . urlopen ( url ) <NEWLINE> with open ( local , <STRING> ) as f : <NEWLINE> <INDENT> f . write ( src . read ( ) ) <NEWLINE> <DEDENT> with open ( local , <STRING> ) as source : <NEWLINE> <INDENT> forum_topics ( source ) <NEWLINE> <DEDENT> <DEDENT>",
+      "anonymize_dict": {
+        "<STRING>": [
+          "'w'",
+          "'r'"
+        ]
+      }
+    },
+    "ecb37c8fc54b681c15fe049a262a9c98": {
+      "code_string": "class install(_install):\n    def run(self):\n        super().run()\n        self.execute(\n            make_shortcut,\n            (self.install_scripts, ),\n            msg = \"Creating desktop shortcut\"\n        )\n",
+      "code_toks_joined": "class install ( _install ) : <NEWLINE> <INDENT> def run ( self ) : <NEWLINE> <INDENT> super ( ) . run ( ) <NEWLINE> self . execute ( <NEWLINE> <INDENT> make_shortcut , <NEWLINE> ( self . install_scripts , ) , <NEWLINE> msg = <STRING> <NEWLINE> <DEDENT> ) <NEWLINE> <DEDENT> <DEDENT>",
+      "anonymize_dict": {
+        "<STRING>": [
+          "\"Creating desktop shortcut\""
+        ]
+      }
+    },
+    "b47c55ba94147d42cb0a53d075091091": {
+      "code_string": "def main():\n    actions = log_collection.find(\n        {},\n        {'action': True}\n    ).distinct(\n        'action'\n    )\n    for action in actions:\n        analyze_log_action(action)\n",
+      "code_toks_joined": "def main ( ) : <NEWLINE> <INDENT> actions = log_collection . find ( <NEWLINE> <INDENT> { } , <NEWLINE> { <STRING> : True } <NEWLINE> <DEDENT> ) . distinct ( <NEWLINE> <INDENT> <STRING> <NEWLINE> <DEDENT> ) <NEWLINE> for action in actions : <NEWLINE> <INDENT> analyze_log_action ( action ) <NEWLINE> <DEDENT> <DEDENT>",
+      "anonymize_dict": {
+        "<STRING>": [
+          "'action'",
+          "'action'"
+        ]
+      }
+    },
+    "af9c36fb7057d165ef5b72739ebc59d3": {
+      "code_string": "class InteractionStyle(Enum):\n    SYNCHRONOUS = auto()\n    ASYNCHRONOUS = auto()\n",
+      "code_toks_joined": "class InteractionStyle ( Enum ) : <NEWLINE> <INDENT> SYNCHRONOUS = auto ( ) <NEWLINE> ASYNCHRONOUS = auto ( ) <NEWLINE> <DEDENT>",
+      "anonymize_dict": {}
+    },
+    "c6b9c8abf69f9f1c769d2e8cbf15d0b6": {
+      "code_string": "def main():\n    input_length = 100\n    hidden_cnt = 50\n    nn = NeuralNetwork(RNN(input_length, hidden_cnt))\n    data = get_test_data(input_length)\n    print(\"TRAIN\")\n    nn.train(data)\n    print(\"TEST\")\n    nn.test(data)\n    print(\"TRAIN WITH CROSS-VALIDATION\")\n    nn.run_with_cross_validation(data, 2)\n    print(\"FEATURE SELECTION\")\n    features = nn.feature_selection(data)\n    print(\"Selected features: {0}\".format(features))\n",
+      "code_toks_joined": "def main ( ) : <NEWLINE> <INDENT> input_length = 100 <NEWLINE> hidden_cnt = 50 <NEWLINE> nn = NeuralNetwork ( RNN ( input_length , hidden_cnt ) ) <NEWLINE> data = get_test_data ( input_length ) <NEWLINE> print ( <STRING> ) <NEWLINE> nn . train ( data ) <NEWLINE> print ( <STRING> ) <NEWLINE> nn . test ( data ) <NEWLINE> print ( <STRING> ) <NEWLINE> nn . run_with_cross_validation ( data , 2 ) <NEWLINE> print ( <STRING> ) <NEWLINE> features = nn . feature_selection ( data ) <NEWLINE> print ( <STRING> . format ( features ) ) <NEWLINE> <DEDENT>",
+      "anonymize_dict": {
+        "<STRING>": [
+          "\"TRAIN\"",
+          "\"TEST\"",
+          "\"TRAIN WITH CROSS-VALIDATION\"",
+          "\"FEATURE SELECTION\"",
+          "\"Selected features: {0}\""
+        ]
+      }
+    },
+    "4c3136a028dfb95cc6c127e9a1b1b00c": {
+      "code_string": "class Maker(FileSystemEventHandler):\n    def on_modified(self, _):\n        Maker.lock = True\n        print('make')\n        p = subprocess.Popen('make')\n        p.wait()\n",
+      "code_toks_joined": "class Maker ( FileSystemEventHandler ) : <NEWLINE> <INDENT> def on_modified ( self , _ ) : <NEWLINE> <INDENT> Maker . lock = True <NEWLINE> print ( <STRING> ) <NEWLINE> p = subprocess . Popen ( <STRING> ) <NEWLINE> p . wait ( ) <NEWLINE> <DEDENT> <DEDENT>",
+      "anonymize_dict": {
+        "<STRING>": [
+          "'make'",
+          "'make'"
+        ]
+      }
+    },
+    "421649ab584e74bab3657a2c0883bfea": {
+      "code_string": "def test_t17():\n    lines = run_test('t17').split('\\n')\n    assert(lines[1] == '3141')\n",
+      "code_toks_joined": "def test_t17 ( ) : <NEWLINE> <INDENT> lines = run_test ( <STRING> ) . split ( <STRING> ) <NEWLINE> assert ( lines [ 1 ] == <STRING> ) <NEWLINE> <DEDENT>",
+      "anonymize_dict": {
+        "<STRING>": [
+          "'t17'",
+          "'\\n'",
+          "'3141'"
+        ]
+      }
+    }
+}

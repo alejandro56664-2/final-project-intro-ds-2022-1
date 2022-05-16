@@ -1,0 +1,202 @@
+{
+  "3f75c5788ea80f1ea8de77ed565a3281": {
+    "code_string": "def test_delitem_keyerror(self):\n    e = EntryBase(req_()\n    del e['missing_key']\n",
+    "code_toks_joined": "def test_delitem_keyerror ( self ) : <NEWLINE> <INDENT> e = EntryBase ( req_ ( ) <NEWLINE> del e [ <STRING> ] <NEWLINE> <DEDENT>",
+    "anonymize_dict": {
+      "<STRING>": [
+        "'missing_key'"
+      ]
+    },
+    "err_obj": {
+      "msg": "unbalanced (){}[]"
+    }
+  },
+  "999066dadabc7f66d374c02985ccca4b": {
+    "code_string": "def retranslateUi(self, SettingsDialog_base):\n    SettingsDialog_base.setWindowTitle(QtGui.QApplication.translate(\"SettingsDialog_base\", \"HP Device Manager - Settings\", None, QtGui.QApplication.UnicodeUTF8))\n    self.textLabel3_2_2.setText(QtGui.QApplication.translate(\"SettingsDialog_base\", \"<html><head><meta name=\\\"qrichtext\\\" content=\\\"1\\\" /><style type=\\\"text/css\\\">\\n\"\n",
+    "code_toks_joined": "def retranslateUi ( self , SettingsDialog_base ) : <NEWLINE> <INDENT> SettingsDialog_base . setWindowTitle ( QtGui . QApplication . translate ( <STRING> , <STRING> , None , QtGui . QApplication . UnicodeUTF8 ) ) <NEWLINE> self . textLabel3_2_2 . setText ( QtGui . QApplication . translate ( <STRING> , <STRING> <NEWLINE> <DEDENT>",
+    "anonymize_dict": {
+      "<STRING>": [
+        "\"SettingsDialog_base\"",
+        "\"HP Device Manager - Settings\"",
+        "\"SettingsDialog_base\"",
+        "\"<html><head><meta name=\\\"qrichtext\\\" content=\\\"1\\\" /><style type=\\\"text/css\\\">\\n\""
+      ]
+    },
+    "err_obj": {
+      "msg": "unbalanced (){}[]"
+    }
+  },
+  "f28bacdd960e75252c5d01442a9cce0b": {
+    "code_string": "def process(fn, mergefile = None, lazy = False):\n    if lazy and mergefile and os.stat(fn).st_mtime < os.stat(mergefile).st_mtime:\n    return\n    print(mergefile)\n    gen = Gen()\n    directives.execute(directives.load(fn), gen)\n    result = gen.generate()\n    if mergefile is None:\n        print(result)\n    else:\n    print('Merging %s into %s' %(fn, mergefile))\n        result = merge(mergefile, result)\n",
+    "code_toks_joined": "def process ( fn , mergefile = None , lazy = False ) : <NEWLINE> <INDENT> if lazy and mergefile and os . stat ( fn ) . st_mtime < os . stat ( mergefile ) . st_mtime : <NEWLINE> return <NEWLINE> print ( mergefile ) <NEWLINE> gen = Gen ( ) <NEWLINE> directives . execute ( directives . load ( fn ) , gen ) <NEWLINE> result = gen . generate ( ) <NEWLINE> if mergefile is None : <NEWLINE> <INDENT> print ( result ) <NEWLINE> <DEDENT> else : <NEWLINE> print ( <STRING> % ( fn , mergefile ) ) <NEWLINE> <INDENT> result = merge ( mergefile , result ) <NEWLINE> <DEDENT> <DEDENT>",
+    "anonymize_dict": {
+      "<STRING>": [
+        "'Merging %s into %s'"
+      ]
+    },
+    "err_obj": {
+      "msg": "expected an indented block"
+    }
+  },
+  "c38788ef6d867090c5c1876e48466901": {
+    "code_string": "def samePath(path1, path2):\n    '''Returns true if two given pathes path1 and path2 point to the same location'''\n    if os.path.abspath(path1) == os.path.abspath(path2):\n    return True\n    else:\n    return False\n",
+    "code_toks_joined": "def samePath ( path1 , path2 ) : <NEWLINE> <INDENT> <STRING> <NEWLINE> if os . path . abspath ( path1 ) == os . path . abspath ( path2 ) : <NEWLINE> return True <NEWLINE> else : <NEWLINE> return False <NEWLINE> <DEDENT>",
+    "anonymize_dict": {
+      "<STRING>": [
+        "'''Returns true if two given pathes path1 and path2 point to the same location'''"
+      ]
+    },
+    "err_obj": {
+      "msg": "expected an indented block"
+    }
+  },
+  "53bb12b19a4b0c8087a44c55bd7995c8": {
+    "code_string": "def output_to_file(filename, mode = 'w'):\n    with contextlib.closing(open(filename, mode)) as port:\n    with CURRENT_OUTPUT_PORT.let(port):\n        yield\n",
+    "code_toks_joined": "def output_to_file ( filename , mode = <STRING> ) : <NEWLINE> <INDENT> with contextlib . closing ( open ( filename , mode ) ) as port : <NEWLINE> with CURRENT_OUTPUT_PORT . let ( port ) : <NEWLINE> <INDENT> yield <NEWLINE> <DEDENT> <DEDENT>",
+    "anonymize_dict": {
+      "<STRING>": [
+        "'w'"
+      ]
+    },
+    "err_obj": {
+      "msg": "expected an indented block"
+    }
+  },
+  "1aef782c2e82fc988b7f2f8a7f371393": {
+    "code_string": "def create(self, req, body = None):\n    \"\"\"Return a list of certificates.\"\"\"\n    context = req.environ['nova.context']\n    authorize(context)\n    pk, cert = rpc.call(context, FLAGS.cert_topic,\n        {\"method\": \"generate_x509_cert\",\n            \"args\": {\"user_id\": context.user_id,\n                \"project_id\": context.project_id})\n    context = req.environ['nova.context']\n    return{'certificate': _translate_certificate_view(cert, pk)}\n",
+    "code_toks_joined": "def create ( self , req , body = None ) : <NEWLINE> <INDENT> <STRING> <NEWLINE> context = req . environ [ <STRING> ] <NEWLINE> authorize ( context ) <NEWLINE> pk , cert = rpc . call ( context , FLAGS . cert_topic , <NEWLINE> <INDENT> { <STRING> : <STRING> , <NEWLINE> <INDENT> <STRING> : { <STRING> : context . user_id , <NEWLINE> <INDENT> <STRING> : context . project_id } ) <NEWLINE> <DEDENT> <DEDENT> <DEDENT> context = req . environ [ <STRING> ] <NEWLINE> return { <STRING> : _translate_certificate_view ( cert , pk ) } <NEWLINE> <DEDENT>",
+    "anonymize_dict": {
+      "<STRING>": [
+        "\"\"\"Return a list of certificates.\"\"\"",
+        "'nova.context'",
+        "\"method\"",
+        "\"generate_x509_cert\"",
+        "\"args\"",
+        "\"user_id\"",
+        "\"project_id\"",
+        "'nova.context'",
+        "'certificate'"
+      ]
+    },
+    "err_obj": {
+      "msg": "unbalanced (){}[]"
+    }
+  },
+  "7f066de7ac400e7b32b18b271fdab496": {
+    "code_string": "def get_mimetype(res, filename):\n    if res in(\n        'application/x-download',\n        'application/x-application',\n        'application/binary',\n        'application/octet-stream',\n        ):\n        guessed_type, _ = mimetypes.guess_type(filename)\n        if guessed_type:\n        res = guessed_type\n    return res\n",
+    "code_toks_joined": "def get_mimetype ( res , filename ) : <NEWLINE> <INDENT> if res in ( <NEWLINE> <INDENT> <STRING> , <NEWLINE> <STRING> , <NEWLINE> <STRING> , <NEWLINE> <STRING> , <NEWLINE> ) : <NEWLINE> guessed_type , _ = mimetypes . guess_type ( filename ) <NEWLINE> if guessed_type : <NEWLINE> res = guessed_type <NEWLINE> <DEDENT> return res <NEWLINE> <DEDENT>",
+    "anonymize_dict": {
+      "<STRING>": [
+        "'application/x-download'",
+        "'application/x-application'",
+        "'application/binary'",
+        "'application/octet-stream'"
+      ]
+    },
+    "err_obj": {
+      "msg": "expected an indented block"
+    }
+  },
+  "07e4ecb86091f3ffbcdf30894f3ef6c5": {
+    "code_string": "def _GenApiConfigCallback(args, api_func = GenApiConfig):\n    \"\"\"Generate an api file.\"\"\"\n    service_configs = api_func(args.service\n        hostname = args.hostname,\n        application_path = args.application)\n    for api_name_version, config in service_configs.iteritems():\n        _WriteFile(args.output, api_name_version + '.api', config)\n",
+    "code_toks_joined": "def _GenApiConfigCallback ( args , api_func = GenApiConfig ) : <NEWLINE> <INDENT> <STRING> <NEWLINE> service_configs = api_func ( args . service <NEWLINE> <INDENT> hostname = args . hostname , <NEWLINE> application_path = args . application ) <NEWLINE> <DEDENT> for api_name_version , config in service_configs . iteritems ( ) : <NEWLINE> <INDENT> _WriteFile ( args . output , api_name_version + <STRING> , config ) <NEWLINE> <DEDENT> <DEDENT>",
+    "anonymize_dict": {
+      "<STRING>": [
+        "\"\"\"Generate an api file.\"\"\"",
+        "'.api'"
+      ]
+    },
+    "err_obj": {
+      "msg": "invalid syntax"
+    }
+  },
+  "d41e86c190acc5c2b1542f43fee899a3": {
+    "code_string": "def expand_light_count(dimmed_rgb count):\n    dmx_channels = []\n    for light in range(count):\n        dmx_channels.extend(dimmed_rgb)\n    return dmx_channels\n",
+    "code_toks_joined": "def expand_light_count ( dimmed_rgb count ) : <NEWLINE> <INDENT> dmx_channels = [ ] <NEWLINE> for light in range ( count ) : <NEWLINE> <INDENT> dmx_channels . extend ( dimmed_rgb ) <NEWLINE> <DEDENT> return dmx_channels <NEWLINE> <DEDENT>",
+    "anonymize_dict": {},
+    "err_obj": {
+      "msg": "invalid syntax"
+    }
+  },
+  "7306beb5ac9e44d446d0613840256977": {
+    "code_string": "def setupUi(self, ManitaeMainWindow):\n    ManitaeMainWindow.setObjectName(_fromUtf8(\"ManitaeMainWindow\"))\n    ManitaeMainWindow.resize(1305, 666)\n    ManitaeMainWindow.setWindowTitle(QtGui.QApplication.translate(\"ManitaeMainWindow\", \"Manitae\", None, QtGui.QApplication.UnicodeUTF8))\n    self.centralWidget = QtGui.QWidget(ManitaeMainWindow)\n    self.centralWidget.setObjectName(_fromUtf8(\"centralWidget\"))\n    self.gridLayout_2 = QtGui.QGridLayout(self.centralWidget)\n    self.gridLayout_2.setObjectName(_fromUtf8(\"gridLayout_2\"))\n    self.tabWidget = QtGui.QTabWidget(self.centralWidget)\n    self.tabWidget.setObjectName(_fromUtf8(\"tabWidget\"))\n    self.tab = QtGui.QWidget()\n    self.tab.setObjectName(_fromUtf8(\"tab\"))\n    self.gridLayout = QtGui.QGridLayout(self.tab)\n    self.gridLayout.setObjectName(_fromUtf8(\"gridLayout\"))\n    self.widget = ManitaeSummary(self.tab)\n    self.widget.setObjectName(_fromUtf8(\"widget\"))\n    self.gridLayout.addWidget(self.widget, 0, 0, 1, 1)\n    self.tabWidget.addTab(self.tab, _fromUtf8(\"\"))\n    self.tab_2 = QtGui.QWidget()\n    self.tab_2.setObjectName(_fromUtf8(\"tab_2\"))\n    self.gridLayout_3 = QtGui.QGridLayout(self.tab_2)\n    self.gridLayout_3.setObjectName(_fromUtf8(\"gridLayout_3\"))\n    self.peopleTabWidget = QtGui.QTabWidget(self.tab_2)\n    self.peopleTabWidget.setObjectName(_fromUtf8(\"peopleTabWidget\"))\n    self.gridLayout_3.addWidget(self.peopleTabWidget, 0, 0, 1, 1)\n    self.tabWidget.addTab(self.tab_2, _fromUtf8(\"\"))\n    self.tab_3 = QtGui.QWidget()\n    self.tab_3.setObjectName(_fromUtf8(\"tab_3\"))\n    self.gridLayout_7 = QtGui.QGridLayout(self.tab_3)\n    self.gridLayout_7.setObjectName(_fromUtf8(\"gridLayout_7\"))\n    self.mapTabWidget = QtGui.QWidget(self.tab_3)\n    self.mapTabWidget.setObjectName(_fromUtf8(\"mapTabWidget\"))\n    self.verticalLayout = QtGui.QVBoxLayout(self.mapTabWidget)\n    self.verticalLayout.setMargin(0)\n    self.verticalLayout.setObjectName(_fromUtf8(\"verticalLayout\"))\n    self.mapView = QtDeclarative.QDeclarativeView(self.mapTabWidget)\n    self.mapView.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAsNeeded)\n    self.mapView.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAsNeeded)\n    self.mapView.setResizeMode(QtDeclarative.QDeclarativeView.SizeViewToRootObject)\n    self.mapView.setObjectName(_fromUtf8(\"mapView\"))\n    self.verticalLayout.addWidget(self.mapView)\n    self.verticalLayout_2 = QtGui.QVBoxLayout()\n    self.verticalLayout_2.setObjectName(_fromUtf8(\"verticalLayout_2\"))\n    self.groupBox = QtGui.QGroupBox(self.mapTabWidget)\n    self.groupBox.setTitle(QtGui.QApplication.translate(\"ManitaeMainWindow\", \"On This Square\", None, QtGui.QApplication.UnicodeUTF8))\n    self.groupBox.setObjectName(_fromUtf8(\"groupBox\"))\n    self.formLayout_2 = QtGui.QFormLayout(self.groupBox)\n    self.formLayout_2.setFieldGrowthPolicy(QtGui.QFormLayout.ExpandingFieldsGrow)\n    self.formLayout_2.setObjectName(_fromUtf8(\"formLayout_2\"))\n    self.label = QtGui.QLabel(self.groupBox)\n    self.label.setText(QtGui.QApplication.translate(\"ManitaeMainWindow\", \"Position\", None, QtGui.QApplication.UnicodeUTF8))\n    self.label.setObjectName(_fromUtf8(\"label\"))\n    self.formLayout_2.setWidget(0, QtGui.QFormLayout.LabelRole, self.label)\n    self.positionLineEdit = QtGui.QLineEdit(self.groupBox)\n    self.positionLineEdit.setReadOnly(True)\n    self.positionLineEdit.setObjectName(_fromUtf8(\"positionLineEdit\"))\n    self.formLayout_2.setWidget(0, QtGui.QFormLayout.FieldRole, self.positionLineEdit)\n    self.label_2 = QtGui.QLabel(self.groupBox)\n    self.label_2.setText(QtGui.QApplication.translate(\"ManitaeMainWindow\", \"Object\", None, QtGui.QApplication.UnicodeUTF8))\n    self.label_2.setObjectName(_fromUtf8(\"label_2\"))\n    self.formLayout_2.setWidget(1, QtGui.QFormLayout.LabelRole, self.label_2)\n    self.tileOccupantLineEdit = QtGui.QLineEdit(self.groupBox)\n    self.tileOccupantLineEdit.setReadOnly(True)\n    self.tileOccupantLineEdit.setObjectName(_fromUtf8(\"tileOccupantLineEdit\"))\n    self.formLayout_2.setWidget(1, QtGui.QFormLayout.FieldRole, self.tileOccupantLineEdit)\n    self.verticalLayout_2.addWidget(self.groupBox)\n    self.groupBox_2 = QtGui.QGroupBox(self.mapTabWidget)\n    self.groupBox_2.setTitle(QtGui.QApplication.translate(\"ManitaeMainWindow\", \"Actions\", None, QtGui.QApplication.UnicodeUTF8))\n    self.groupBox_2.setObjectName(_fromUtf8(\"groupBox_2\"))\n    self.gridLayout_6 = QtGui.QGridLayout(self.groupBox_2)\n    self.gridLayout_6.setObjectName(_fromUtf8(\"gridLayout_6\"))\n    self.buildPushButton = QtGui.QPushButton(self.groupBox_2)\n    self.buildPushButton.setEnabled(False)\n    self.buildPushButton.setText(QtGui.QApplication.translate(\"ManitaeMainWindow\", \"Build\", None, QtGui.QApplication.UnicodeUTF8))\n    self.buildPushButton.setObjectName(_fromUtf8(\"buildPushButton\"))\n    self.gridLayout_6.addWidget(self.buildPushButton, 0, 1, 1, 1)\n    self.buildComboBox = QtGui.QComboBox(self.groupBox_2)\n    self.buildComboBox.setObjectName(_fromUtf8(\"buildComboBox\"))\n    self.gridLayout_6.addWidget(self.buildComboBox, 0, 0, 1, 1)\n    self.pushButton_2 = QtGui.QPushButton(self.groupBox_2)\n    self.pushButton_2.setEnabled(False)\n    self.pushButton_2.setText(QtGui.QApplication.translate(\"ManitaeMainWindow\", \"Destroy\", None, QtGui.QApplication.UnicodeUTF8))\n    self.pushButton_2.setObjectName(_fromUtf8(\"pushButton_2\"))\n    self.gridLayout_6.addWidget(self.pushButton_2, 1, 1, 1, 1)\n    self.goToTabPushButton = QtGui.QPushButton(self.groupBox_2)\n    self.goToTabPushButton.setEnabled(False)\n    self.goToTabPushButton.setText(QtGui.QApplication.translate(\"ManitaeMainWindow\", \"Go to Unit\\'s tab\", None, QtGui.QApplication.UnicodeUTF8))\n    self.goToTabPushButton.setObjectName(_fromUtf8(\"goToTabPushButton\"))\n    self.gridLayout_6.addWidget(self.goToTabPushButton, 1, 0, 1, 1)\n    self.verticalLayout_2.addWidget(self.groupBox_2)\n    self.verticalLayout.addLayout(self.verticalLayout_2)\n    self.gridLayout_7.addWidget(self.mapTabWidget, 0, 0, 1, 1)\n    self.tabWidget.addTab(self.tab_3, _fromUtf8(\"\"))\n    self.gridLayout_2.addWidget(self.tabWidget, 0, 0, 1, 1)\n    ManitaeMainWindow.setCentralWidget(self.centralWidget)\n    self.menuBar = QtGui.QMenuBar(ManitaeMainWindow)\n    self.menuBar.setGeometry(QtCore.QRect(0, 0, 1305, 21))\n    self.menuBar.setObjectName(_fromUtf8(\"menuBar\"))\n    self.menuGame = QtGui.QMenu(self.menuBar)\n    self.menuGame.setTitle(QtGui.QApplication.translate(\"ManitaeMainWindow\", \"Game\", None, QtGui.QApplication.UnicodeUTF8))\n    self.menuGame.setObjectName(_fromUtf8(\"menuGame\"))\n    self.menuStats = QtGui.QMenu(self.menuBar)\n    self.menuStats.setTitle(QtGui.QApplication.translate(\"ManitaeMainWindow\", \"Stats\", None, QtGui.QApplication.UnicodeUTF8))\n    self.menuStats.setObjectName(_fromUtf8(\"menuStats\"))\n    self.menuHelp = QtGui.QMenu(self.menuBar)\n    self.menuHelp.setTitle(QtGui.QApplication.translate(\"ManitaeMainWindow\", \"Help\", None, QtGui.QApplication.UnicodeUTF8))\n    self.menuHelp.setObjectName(_fromUtf8(\"menuHelp\"))\n    ManitaeMainWindow.setMenuBar(self.menuBar)\n    self.mainToolBar = QtGui.QToolBar(ManitaeMainWindow)\n    self.mainToolBar.setMovable(False)\n    self.mainToolBar.setFloatable(False)\n    self.mainToolBar.setObjectName(_fromUtf8(\"mainToolBar\"))\n    ManitaeMainWindow.addToolBar(QtCore.Qt.TopToolBarArea, self.mainToolBar)\n    self.statusBar = QtGui.QStatusBar(ManitaeMainWindow)\n    self.statusBar.setObjectName(_fromUtf8(\"statusBar\"))\n    ManitaeMainWindow.setStatusBar(self.statusBar)\n    self.dockWidget = QtGui.QDockWidget(ManitaeMainWindow)\n    self.dockWidget.setWindowTitle(QtGui.QApplication.translate(\"ManitaeMainWindow\", \"Notices\", None, QtGui.QApplication.UnicodeUTF8))\n    self.dockWidget.setObjectName(_fromUtf8(\"dockWidget\"))\n    self.dockWidgetContents = QtGui.QWidget()\n    self.dockWidgetContents.setObjectName(_fromUtf8(\"dockWidgetContents\"))\n    self.gridLayout_4 = QtGui.QGridLayout(self.dockWidgetContents)\n    self.gridLayout_4.setObjectName(_fromUtf8(\"gridLayout_4\"))\n    self.noticeLog = QtGui.QTextEdit(self.dockWidgetContents)\n    self.noticeLog.setEnabled(True)\n    self.noticeLog.setReadOnly(True)\n    self.noticeLog.setHtml(QtGui.QApplication.translate(\"ManitaeMainWindow\", \"<!DOCTYPE HTML PUBLIC \\\"-//W3C//DTD HTML 4.0//EN\\\" \\\"http://www.w3.org/TR/REC-html40/strict.dtd\\\">\\n\"\n",
+    "code_toks_joined": "def setupUi ( self , ManitaeMainWindow ) : <NEWLINE> <INDENT> ManitaeMainWindow . setObjectName ( _fromUtf8 ( <STRING> ) ) <NEWLINE> ManitaeMainWindow . resize ( 1305 , 666 ) <NEWLINE> ManitaeMainWindow . setWindowTitle ( QtGui . QApplication . translate ( <STRING> , <STRING> , None , QtGui . QApplication . UnicodeUTF8 ) ) <NEWLINE> self . centralWidget = QtGui . QWidget ( ManitaeMainWindow ) <NEWLINE> self . centralWidget . setObjectName ( _fromUtf8 ( <STRING> ) ) <NEWLINE> self . gridLayout_2 = QtGui . QGridLayout ( self . centralWidget ) <NEWLINE> self . gridLayout_2 . setObjectName ( _fromUtf8 ( <STRING> ) ) <NEWLINE> self . tabWidget = QtGui . QTabWidget ( self . centralWidget ) <NEWLINE> self . tabWidget . setObjectName ( _fromUtf8 ( <STRING> ) ) <NEWLINE> self . tab = QtGui . QWidget ( ) <NEWLINE> self . tab . setObjectName ( _fromUtf8 ( <STRING> ) ) <NEWLINE> self . gridLayout = QtGui . QGridLayout ( self . tab ) <NEWLINE> self . gridLayout . setObjectName ( _fromUtf8 ( <STRING> ) ) <NEWLINE> self . widget = ManitaeSummary ( self . tab ) <NEWLINE> self . widget . setObjectName ( _fromUtf8 ( <STRING> ) ) <NEWLINE> self . gridLayout . addWidget ( self . widget , 0 , 0 , 1 , 1 ) <NEWLINE> self . tabWidget . addTab ( self . tab , _fromUtf8 ( <STRING> ) ) <NEWLINE> self . tab_2 = QtGui . QWidget ( ) <NEWLINE> self . tab_2 . setObjectName ( _fromUtf8 ( <STRING> ) ) <NEWLINE> self . gridLayout_3 = QtGui . QGridLayout ( self . tab_2 ) <NEWLINE> self . gridLayout_3 . setObjectName ( _fromUtf8 ( <STRING> ) ) <NEWLINE> self . peopleTabWidget = QtGui . QTabWidget ( self . tab_2 ) <NEWLINE> self . peopleTabWidget . setObjectName ( _fromUtf8 ( <STRING> ) ) <NEWLINE> self . gridLayout_3 . addWidget ( self . peopleTabWidget , 0 , 0 , 1 , 1 ) <NEWLINE> self . tabWidget . addTab ( self . tab_2 , _fromUtf8 ( <STRING> ) ) <NEWLINE> self . tab_3 = QtGui . QWidget ( ) <NEWLINE> self . tab_3 . setObjectName ( _fromUtf8 ( <STRING> ) ) <NEWLINE> self . gridLayout_7 = QtGui . QGridLayout ( self . tab_3 ) <NEWLINE> self . gridLayout_7 . setObjectName ( _fromUtf8 ( <STRING> ) ) <NEWLINE> self . mapTabWidget = QtGui . QWidget ( self . tab_3 ) <NEWLINE> self . mapTabWidget . setObjectName ( _fromUtf8 ( <STRING> ) ) <NEWLINE> self . verticalLayout = QtGui . QVBoxLayout ( self . mapTabWidget ) <NEWLINE> self . verticalLayout . setMargin ( 0 ) <NEWLINE> self . verticalLayout . setObjectName ( _fromUtf8 ( <STRING> ) ) <NEWLINE> self . mapView = QtDeclarative . QDeclarativeView ( self . mapTabWidget ) <NEWLINE> self . mapView . setVerticalScrollBarPolicy ( QtCore . Qt . ScrollBarAsNeeded ) <NEWLINE> self . mapView . setHorizontalScrollBarPolicy ( QtCore . Qt . ScrollBarAsNeeded ) <NEWLINE> self . mapView . setResizeMode ( QtDeclarative . QDeclarativeView . SizeViewToRootObject ) <NEWLINE> self . mapView . setObjectName ( _fromUtf8 ( <STRING> ) ) <NEWLINE> self . verticalLayout . addWidget ( self . mapView ) <NEWLINE> self . verticalLayout_2 = QtGui . QVBoxLayout ( ) <NEWLINE> self . verticalLayout_2 . setObjectName ( _fromUtf8 ( <STRING> ) ) <NEWLINE> self . groupBox = QtGui . QGroupBox ( self . mapTabWidget ) <NEWLINE> self . groupBox . setTitle ( QtGui . QApplication . translate ( <STRING> , <STRING> , None , QtGui . QApplication . UnicodeUTF8 ) ) <NEWLINE> self . groupBox . setObjectName ( _fromUtf8 ( <STRING> ) ) <NEWLINE> self . formLayout_2 = QtGui . QFormLayout ( self . groupBox ) <NEWLINE> self . formLayout_2 . setFieldGrowthPolicy ( QtGui . QFormLayout . ExpandingFieldsGrow ) <NEWLINE> self . formLayout_2 . setObjectName ( _fromUtf8 ( <STRING> ) ) <NEWLINE> self . label = QtGui . QLabel ( self . groupBox ) <NEWLINE> self . label . setText ( QtGui . QApplication . translate ( <STRING> , <STRING> , None , QtGui . QApplication . UnicodeUTF8 ) ) <NEWLINE> self . label . setObjectName ( _fromUtf8 ( <STRING> ) ) <NEWLINE> self . formLayout_2 . setWidget ( 0 , QtGui . QFormLayout . LabelRole , self . label ) <NEWLINE> self . positionLineEdit = QtGui . QLineEdit ( self . groupBox ) <NEWLINE> self . positionLineEdit . setReadOnly ( True ) <NEWLINE> self . positionLineEdit . setObjectName ( _fromUtf8 ( <STRING> ) ) <NEWLINE> self . formLayout_2 . setWidget ( 0 , QtGui . QFormLayout . FieldRole , self . positionLineEdit ) <NEWLINE> self . label_2 = QtGui . QLabel ( self . groupBox ) <NEWLINE> self . label_2 . setText ( QtGui . QApplication . translate ( <STRING> , <STRING> , None , QtGui . QApplication . UnicodeUTF8 ) ) <NEWLINE> self . label_2 . setObjectName ( _fromUtf8 ( <STRING> ) ) <NEWLINE> self . formLayout_2 . setWidget ( 1 , QtGui . QFormLayout . LabelRole , self . label_2 ) <NEWLINE> self . tileOccupantLineEdit = QtGui . QLineEdit ( self . groupBox ) <NEWLINE> self . tileOccupantLineEdit . setReadOnly ( True ) <NEWLINE> self . tileOccupantLineEdit . setObjectName ( _fromUtf8 ( <STRING> ) ) <NEWLINE> self . formLayout_2 . setWidget ( 1 , QtGui . QFormLayout . FieldRole , self . tileOccupantLineEdit ) <NEWLINE> self . verticalLayout_2 . addWidget ( self . groupBox ) <NEWLINE> self . groupBox_2 = QtGui . QGroupBox ( self . mapTabWidget ) <NEWLINE> self . groupBox_2 . setTitle ( QtGui . QApplication . translate ( <STRING> , <STRING> , None , QtGui . QApplication . UnicodeUTF8 ) ) <NEWLINE> self . groupBox_2 . setObjectName ( _fromUtf8 ( <STRING> ) ) <NEWLINE> self . gridLayout_6 = QtGui . QGridLayout ( self . groupBox_2 ) <NEWLINE> self . gridLayout_6 . setObjectName ( _fromUtf8 ( <STRING> ) ) <NEWLINE> self . buildPushButton = QtGui . QPushButton ( self . groupBox_2 ) <NEWLINE> self . buildPushButton . setEnabled ( False ) <NEWLINE> self . buildPushButton . setText ( QtGui . QApplication . translate ( <STRING> , <STRING> , None , QtGui . QApplication . UnicodeUTF8 ) ) <NEWLINE> self . buildPushButton . setObjectName ( _fromUtf8 ( <STRING> ) ) <NEWLINE> self . gridLayout_6 . addWidget ( self . buildPushButton , 0 , 1 , 1 , 1 ) <NEWLINE> self . buildComboBox = QtGui . QComboBox ( self . groupBox_2 ) <NEWLINE> self . buildComboBox . setObjectName ( _fromUtf8 ( <STRING> ) ) <NEWLINE> self . gridLayout_6 . addWidget ( self . buildComboBox , 0 , 0 , 1 , 1 ) <NEWLINE> self . pushButton_2 = QtGui . QPushButton ( self . groupBox_2 ) <NEWLINE> self . pushButton_2 . setEnabled ( False ) <NEWLINE> self . pushButton_2 . setText ( QtGui . QApplication . translate ( <STRING> , <STRING> , None , QtGui . QApplication . UnicodeUTF8 ) ) <NEWLINE> self . pushButton_2 . setObjectName ( _fromUtf8 ( <STRING> ) ) <NEWLINE> self . gridLayout_6 . addWidget ( self . pushButton_2 , 1 , 1 , 1 , 1 ) <NEWLINE> self . goToTabPushButton = QtGui . QPushButton ( self . groupBox_2 ) <NEWLINE> self . goToTabPushButton . setEnabled ( False ) <NEWLINE> self . goToTabPushButton . setText ( QtGui . QApplication . translate ( <STRING> , <STRING> , None , QtGui . QApplication . UnicodeUTF8 ) ) <NEWLINE> self . goToTabPushButton . setObjectName ( _fromUtf8 ( <STRING> ) ) <NEWLINE> self . gridLayout_6 . addWidget ( self . goToTabPushButton , 1 , 0 , 1 , 1 ) <NEWLINE> self . verticalLayout_2 . addWidget ( self . groupBox_2 ) <NEWLINE> self . verticalLayout . addLayout ( self . verticalLayout_2 ) <NEWLINE> self . gridLayout_7 . addWidget ( self . mapTabWidget , 0 , 0 , 1 , 1 ) <NEWLINE> self . tabWidget . addTab ( self . tab_3 , _fromUtf8 ( <STRING> ) ) <NEWLINE> self . gridLayout_2 . addWidget ( self . tabWidget , 0 , 0 , 1 , 1 ) <NEWLINE> ManitaeMainWindow . setCentralWidget ( self . centralWidget ) <NEWLINE> self . menuBar = QtGui . QMenuBar ( ManitaeMainWindow ) <NEWLINE> self . menuBar . setGeometry ( QtCore . QRect ( 0 , 0 , 1305 , 21 ) ) <NEWLINE> self . menuBar . setObjectName ( _fromUtf8 ( <STRING> ) ) <NEWLINE> self . menuGame = QtGui . QMenu ( self . menuBar ) <NEWLINE> self . menuGame . setTitle ( QtGui . QApplication . translate ( <STRING> , <STRING> , None , QtGui . QApplication . UnicodeUTF8 ) ) <NEWLINE> self . menuGame . setObjectName ( _fromUtf8 ( <STRING> ) ) <NEWLINE> self . menuStats = QtGui . QMenu ( self . menuBar ) <NEWLINE> self . menuStats . setTitle ( QtGui . QApplication . translate ( <STRING> , <STRING> , None , QtGui . QApplication . UnicodeUTF8 ) ) <NEWLINE> self . menuStats . setObjectName ( _fromUtf8 ( <STRING> ) ) <NEWLINE> self . menuHelp = QtGui . QMenu ( self . menuBar ) <NEWLINE> self . menuHelp . setTitle ( QtGui . QApplication . translate ( <STRING> , <STRING> , None , QtGui . QApplication . UnicodeUTF8 ) ) <NEWLINE> self . menuHelp . setObjectName ( _fromUtf8 ( <STRING> ) ) <NEWLINE> ManitaeMainWindow . setMenuBar ( self . menuBar ) <NEWLINE> self . mainToolBar = QtGui . QToolBar ( ManitaeMainWindow ) <NEWLINE> self . mainToolBar . setMovable ( False ) <NEWLINE> self . mainToolBar . setFloatable ( False ) <NEWLINE> self . mainToolBar . setObjectName ( _fromUtf8 ( <STRING> ) ) <NEWLINE> ManitaeMainWindow . addToolBar ( QtCore . Qt . TopToolBarArea , self . mainToolBar ) <NEWLINE> self . statusBar = QtGui . QStatusBar ( ManitaeMainWindow ) <NEWLINE> self . statusBar . setObjectName ( _fromUtf8 ( <STRING> ) ) <NEWLINE> ManitaeMainWindow . setStatusBar ( self . statusBar ) <NEWLINE> self . dockWidget = QtGui . QDockWidget ( ManitaeMainWindow ) <NEWLINE> self . dockWidget . setWindowTitle ( QtGui . QApplication . translate ( <STRING> , <STRING> , None , QtGui . QApplication . UnicodeUTF8 ) ) <NEWLINE> self . dockWidget . setObjectName ( _fromUtf8 ( <STRING> ) ) <NEWLINE> self . dockWidgetContents = QtGui . QWidget ( ) <NEWLINE> self . dockWidgetContents . setObjectName ( _fromUtf8 ( <STRING> ) ) <NEWLINE> self . gridLayout_4 = QtGui . QGridLayout ( self . dockWidgetContents ) <NEWLINE> self . gridLayout_4 . setObjectName ( _fromUtf8 ( <STRING> ) ) <NEWLINE> self . noticeLog = QtGui . QTextEdit ( self . dockWidgetContents ) <NEWLINE> self . noticeLog . setEnabled ( True ) <NEWLINE> self . noticeLog . setReadOnly ( True ) <NEWLINE> self . noticeLog . setHtml ( QtGui . QApplication . translate ( <STRING> , <STRING> <NEWLINE> <DEDENT>",
+    "anonymize_dict": {
+      "<STRING>": [
+        "\"ManitaeMainWindow\"",
+        "\"ManitaeMainWindow\"",
+        "\"Manitae\"",
+        "\"centralWidget\"",
+        "\"gridLayout_2\"",
+        "\"tabWidget\"",
+        "\"tab\"",
+        "\"gridLayout\"",
+        "\"widget\"",
+        "\"\"",
+        "\"tab_2\"",
+        "\"gridLayout_3\"",
+        "\"peopleTabWidget\"",
+        "\"\"",
+        "\"tab_3\"",
+        "\"gridLayout_7\"",
+        "\"mapTabWidget\"",
+        "\"verticalLayout\"",
+        "\"mapView\"",
+        "\"verticalLayout_2\"",
+        "\"ManitaeMainWindow\"",
+        "\"On This Square\"",
+        "\"groupBox\"",
+        "\"formLayout_2\"",
+        "\"ManitaeMainWindow\"",
+        "\"Position\"",
+        "\"label\"",
+        "\"positionLineEdit\"",
+        "\"ManitaeMainWindow\"",
+        "\"Object\"",
+        "\"label_2\"",
+        "\"tileOccupantLineEdit\"",
+        "\"ManitaeMainWindow\"",
+        "\"Actions\"",
+        "\"groupBox_2\"",
+        "\"gridLayout_6\"",
+        "\"ManitaeMainWindow\"",
+        "\"Build\"",
+        "\"buildPushButton\"",
+        "\"buildComboBox\"",
+        "\"ManitaeMainWindow\"",
+        "\"Destroy\"",
+        "\"pushButton_2\"",
+        "\"ManitaeMainWindow\"",
+        "\"Go to Unit\\'s tab\"",
+        "\"goToTabPushButton\"",
+        "\"\"",
+        "\"menuBar\"",
+        "\"ManitaeMainWindow\"",
+        "\"Game\"",
+        "\"menuGame\"",
+        "\"ManitaeMainWindow\"",
+        "\"Stats\"",
+        "\"menuStats\"",
+        "\"ManitaeMainWindow\"",
+        "\"Help\"",
+        "\"menuHelp\"",
+        "\"mainToolBar\"",
+        "\"statusBar\"",
+        "\"ManitaeMainWindow\"",
+        "\"Notices\"",
+        "\"dockWidget\"",
+        "\"dockWidgetContents\"",
+        "\"gridLayout_4\"",
+        "\"ManitaeMainWindow\"",
+        "\"<!DOCTYPE HTML PUBLIC \\\"-//W3C//DTD HTML 4.0//EN\\\" \\\"http://www.w3.org/TR/REC-html40/strict.dtd\\\">\\n\""
+      ]
+    },
+    "window_span": [
+      1754,
+      1766
+    ],
+    "err_obj": {
+      "msg": "unbalanced (){}[]"
+    }
+  }
+}
