@@ -24,7 +24,7 @@ https://github.com/alejandro56664-2/final-project-intro-ds-2022-1
 
 One of the main considerations to take into account when creating a project that uses data is its computational representation and future storage. Databases currently focus on managing massive amounts of data in a quick, consistent, stable and repeatable manner.
 
-The relational model is based on mathematical theory (set theory, relational theory) whereas the nonrelational databases may or may not have a single
+The relational model is based on mathematical theory (set theory, relational theory) whereas the non-relational databases may or may not have a single
 groundwork. Relational databases are beneficial when it comes to robustness, flexibility, reliability and scalability requirements but in order to cater to the needs of modern applications where the data is huge and generally unstructured; Non-relational databases show true signs of usability aiming at being "developer-friendly".
 
 SQL databases are most often implemented in a scale-up architecture, which is based on using ever larger computers with more CPUs and more memory to improve performance. NoSQL databases were created in Internet and cloud computing eras that made it possible to more easily implement a scale-out architecture, where scalability is achieved by spreading the storage of data and the work to process the data over a large cluster of computers. To increase capacity, more computers are added to the cluster.
@@ -35,7 +35,17 @@ We will compare two implementations of our database model (one Relational in Pos
 
 ## 2. Domain description
 
-TODO
+Improving the speed at which human beings acquire new knowledge is a fundamental challenge in society development. Various techniques such as Formative Learning [[1]](http://arxiv.org/abs/2106.16199) have generated many benefits including Learning Progressions, Learning Goals and Criteria for Success, Descriptive Feedback, Self and Peer Assessment and Collaboration between individuals.
+
+There is a variety of techniques that can be used to deliver feedback automatically to the students. The different approaches range from the most basic such as delivering predefined tracks, which are the basis of what can be group as knowledge-driven feedback, to more sophisticated models based on natural language processing using machine learning:
+
+![automatic feedback map](./assets/automatic_feedback_map.png)
+
+A common approach to perform learning-based repair tasks is to use neural translation techniques, in which pairs are needed (Buggy Code, Correct Code). To build that kind of data set, there are two options: first, the researchers can mine repositories and manually identify which commit introduced a bug and which commit resolved it, or create training data consisting of (bad, good) pairs by corrupting good examples using heuristics. The second approach may seem attractive, especially to build large synthetic datasets from smaller sets, however, fixers trained on this synthetically-generated data do not extrapolate well to the real distribution of bad inputs. To solve this problem BIFI[[2]](https://dl.acm.org/doi/10.1145/3231711) propose: first, use the critic to check a fixer’s output on real bad inputs and add good (fixed) outputs to the training data and train a breaker to generate realistic bad code from good code.
+
+This proposal seems interesting to create synthetic datasets that allow evaluating repair models from smaller datasets or datasets that were not originally intended for repair tasks. For this reason we have decided to use this work as a basis for this project.
+
+Our work consists of replicating the BIFI work and using it with the MBPP dataset to evaluate its performance (accuracy, precision, etc.), repairing assignments of basic programming problems. Our idea is to produce an experimental set where BIFI is the baseline to propose repair models for automatic feedback generation that try to improve the registered metrics.
 
 ## 3. Data description
 
@@ -74,19 +84,17 @@ Document example in the 'Good' code dataset:
 
 ## 4. First Approach: Relational Database Model
 
-TODO
+Relational databases allow you to define the dependencies between your entities through relationships. They have demonstrated their robustness over time and encourage several normalization standards for their optimal use.  They allow by default a standardization of data types in each of their tables to ensure consistency and prevent failures, while being designed with a scale-up mindset and often have broad enterprise support.
 
 ### 4.1 Data Modeling
-
-TODO
 
 **Figure with the proposed data model**
 
 ![sql model](./assets/exercise_db_design_impl-sql_data_model.drawio.png)
 
-### 4.2 Rational for SQL Engine selection
+Since our input data can be divided into "Good" and "Bad" code snippets; we can think of them as the two initial tables **code_snipped** and **error**. Each "Good" code snippet will be used together with several "Bad" code block through a "Bug", to find solutions to it through training. The main benefit of this model is that it avoids data redundancy by employing a finite number if bugs which will be referenced in both **code_snipped** and **error** tables.
 
-TODO
+### 4.2 Rational for SQL Engine selection
 
 **Selection criteria**
 
@@ -122,19 +130,22 @@ The selection criteria proposed to help choose the right database engine to carr
 | Snowflake                    | Commercial  | Snowflake Computing Inc.            | No                                   | 93.51   |
 | Microsoft Azure SQL Database | Commercial  | Microsoft                           | No                                   | 85.33   |
 
+Understanding that we were looking for an Open Source database, which would allow us to use containers for its scalability and with a significant adoption in the industry, we reduced the options to MySQL and PostgreSQL. Both had experienced companies on their side. Still, our team had more experience using PostgreSQL so we opted for it.
+
 ## 5. Second Approach: NoSQL Database Model
 
-TODO
+Non-relational databases are much more flexible than relational ones because they allow us to work with many types of data in the same table. They are primarily looking for horizontal scaling and a better developer experience. Our input data is in JSON format so not having to define schemas for each type is a great advantage.
 
 ### 5.1 Data Modeling
 
-TODO
+Understanding the same conception of two tables (one with "Good" code and one with "Bad" code) we can create them as **good_code** and **bad_code**. However, since this database is non-relational, it is not necessary to define such a **bug** relation as in the previous example, and we can store such information in the **bad_code** table in the **err_obj** field.
 
 **Figure with the proposed data model**
 
 ![nosql model](./assets/exercise_db_design_impl-nosql_data_model.drawio.png)
 
-TODO
+
+The bug data will be repeated several times, but its writing and access will be very simple. In addition, the dataset used is made up of 3 million code snippets, so despite being large, it does not necessarily represent a considerable storage cost.
 
 ### 5.2 Rational for NoSQL Engine selection
 
@@ -154,6 +165,10 @@ For simplicity, the same criteria used to select software tools (relational data
 | Solr            | Open Source | Apache Software Foundation                                | https://hub.docker.com/_/solr                  | 57.26  |
 | Databricks      | Open Source | Databricks                                                | No                                             | 47.85  |
 | HBase           | Open Source | Apache Software Foundation                                | No                                             | 43.19  |
+
+It is interesting to see how the vast majority of non-relational databases are Open Source. However, its acceptance at the industrial level is usually less than that of its relational counterpart.
+
+Redis is often used for tasks regarding Session Cache, Full Page Cache (FPC), Queues and other concerns using RAM. Elasticsearch is mainly used as a search engine and is highly optimized for text search. Still, we have each of our documents indexed so we won't its features to the fullest. Mainly due to community usage and robustness we opted for MongoDB.
 
 ## 6. Implementation
 
@@ -249,7 +264,12 @@ The items for good are shown in the image below:
 
 ## 7. Conclusions
 
-TODO
+In many instances where storage and performance limitations may be an issue, it's clear how development time tends to become the largest product cost. But mainly, enterprises advocate for the support and robustness of a fault proof system that can prevent human mistakes.
+
+During the development of this exercise it was evident how by not requiring to use an extra relationship in each of our Create, Read, Update and Delete operations, our productivity increased significantly. For cases in which not many schemas and/or tables aren't used in the database, a Document Store like MongoDB makes the job much easier than a relational database like PosgreSQL. In case the mathematical model that we will implement during the project requires adding or removing fields from the collections, it will be achieved in a non-disruptive way since MongoDB allows us to store our documents in an unstructured way.
+
+As for the future, both databases provide horizontal scaling by default. In terms of community acceptance, both are fairly popular (PostgreSQL with a score of 615.29 and MongoDB with 478.24).
+
 
 ## 8. References
 
@@ -258,3 +278,6 @@ TODO
 - https://hub.docker.com/_/mongo
 - https://wiki.postgresql.org/wiki/Psycopg
 - https://www.mongodb.com/languages/python
+- https://db-engines.com/en/ranking
+- [1] U. Z. Ahmed, Z. Fan, J. Yi, O. I. Al-Bataineh, and A. Roychoudhury, “Verifix: Verified repair of programming assignments,” 6 2021. [Online]. Available: http://arxiv.org/abs/2106.16199
+- [2] H. Keuning, J. Jeuring, and B. Heeren, “A systematic literature review of automated feedback generation for programming exercises,” ACM Transactions on Computing Education, vol. 19, pp. 1–43, 1 2019. [Online]. Available: https://dl.acm.org/doi/10.1145/3231711
