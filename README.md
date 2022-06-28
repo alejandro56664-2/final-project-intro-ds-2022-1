@@ -11,7 +11,9 @@ By:
 
 ## Introduction
 
-Based on: https://github.com/michiyasunaga/BIFI
+Based on: 
+- https://github.com/michiyasunaga/BIFI
+- https://github.com/EhsanMashhadi/MSR2021-ProgramRepair
 
 TODO
 
@@ -19,3 +21,5 @@ TODO
 
 1. [Proposal](./1_proposal/README.md)
 2. [Exercise – Database Design/Implementation](./2_database_design_impl/README.md)
+3. [Exploratory Data Analysis](./3_eda/exploratory_data_analysis.ipynb)
+4. [Data Analysis](./4_da/data_analysis.ipynb)
